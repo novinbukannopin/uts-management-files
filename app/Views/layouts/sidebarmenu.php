@@ -1,25 +1,23 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="<?= base_url() ?>">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
 
         <li class="nav-item nav-category">UI Elements</li>
+
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#category" aria-expanded="false" aria-controls="category">
+            <a class="nav-link " href="<?php base_url() ?>/categories">
                 <i class="menu-icon mdi mdi-apps"></i>
-                <span class="menu-title">Category</span>
-                <i class="menu-arrow"></i>
-            </a>
+                <span class="menu-title">Category</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#files" aria-expanded="false" aria-controls="files">
+            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="files">
                 <i class="menu-icon mdi mdi-animation"></i>
                 <span class="menu-title">Files</span>
-                <i class="menu-arrow"></i>
             </a>
         </li>
         <li class="nav-item">
