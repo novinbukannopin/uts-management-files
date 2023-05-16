@@ -116,6 +116,44 @@ class Categories extends ResourcePresenter
      */
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+        return redirect()->to(site_url('categories'))->with('success', 'Data has been success deleted');
+    }
+
+    public function trash()
+    {
+        $data['categories'] = $this->model->onlyDeleted()->findAll();
+        return view('categories/trash', $data);
+    }
+
+    public function force($id = null)
+    {
+        if ($id != null) {
+            $this->model->delete($id, true);
+            return redirect()->to(site_url('categories/trash'))->with('success', 'Data berhasil di hapus permanen');
+        } else {
+            $this->model->purgeDeleted();
+            return redirect()->to(site_url('categories/trash'))->with('success', 'Data Trash berhasil di hapus permanen');
+        }
+    }
+
+    public function restore($id = null)
+    {
+        $this->db = \Config\Database::connect();
+        if ($id != null) {
+            $this->db->table('categories')
+                ->set('deleted_at', null, true)
+                ->where(['id_categories' => $id])
+                ->update();
+        } else {
+            // restore all
+            $this->db->table('categories')
+                ->set('deleted_at', null, true)
+                ->where('deleted_at IS NOT NULL', null, false)
+                ->update();
+        }
+        if ($this->db->affectedRows() > 0) {
+            return redirect()->to(site_url('categories'))->with('success', 'Data berhasil di restore');
+        }
     }
 }

@@ -10,7 +10,7 @@ class Categories extends Migration
     {
         $this->forge->addField([
             'id_categories' => [
-                'type' => 'BIGINT',
+                'type' => 'BIGINT',      
                 'constraint' => 20,
                 'unsigned' => true,
                 'auto_increment' => true,

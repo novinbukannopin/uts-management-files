@@ -30,6 +30,11 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/categories/trash', 'Categories::trash');
+$routes->get('/categories/restore', 'Categories::restore');
+$routes->post('/categories/force', 'Categories::force');
+$routes->get('/categories/restore/(:any)', 'Categories::restore/$1');
+$routes->post('/categories/force/(:any)', 'Categories::force/$1');
 $routes->presenter('categories');
 /*
  * --------------------------------------------------------------------

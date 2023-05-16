@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/default') ?>
 <?= $this->section('title') ?>
-<title>Categories - MFUTS</title>
+<title>Trash Categories - MFUTS</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('wrapper-print') ?>
@@ -14,7 +14,11 @@
 <div class="card">
 
     <div class="card-body">
-        <?php if (session()->getFlashdata('success')) : ?>
+        <?php
+
+        use function PHPUnit\Framework\isEmpty;
+
+        if (session()->getFlashdata('success')) : ?>
             <div class="alert alert-primary alert-icon d-flex" role="alert">
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                 <div class="alert-icon-aside">
@@ -36,21 +40,31 @@
             </div> -->
         <div class="d-sm-flex justify-content-between align-items-start">
             <div class="">
-                <h4 class="card-title">Table Categories</h4>
+                <h4 class="card-title">Trash Table Categories</h4>
                 <p class="card-description">
-                    Tabel Categories <code>untuk Management Files</code>
+                    Trash Tabel Categories <code>untuk Management Files</code>
                 </p>
             </div>
             <div class="d-flex align-items-center gap-2">
-                <div class="">
-                    <a href="<?= base_url() ?>categories/new">
-                        <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new member</button>
+                <div class="d-flex align-items-center">
+                    <a href="<?= base_url() ?>categories">
+                        <button class="btn btn-primary btn-lg text-white mb-0 me-0 align-items-center" type="button">
+                            <i class="mdi mdi-arrow-left-circle">
+                            </i> Back</button>
                     </a>
                 </div>
                 <div class="">
-                    <a href="<?= base_url() ?>categories/trash">
-                        <button class="btn btn-danger btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-delete"></i>Trash</button>
+                    <a href="<?= base_url() ?>categories/restore">
+                        <button class="btn btn-warning btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-file-restore"></i>Restore All</button>
                     </a>
+                </div>
+                <div class="">
+                    <form action="<?= site_url('/categories/force') ?>" method="post">
+                        <?= csrf_field() ?>
+                        <button class="btn btn-danger btn-lg text-white mb-0 me-0">
+                            <i class="mdi mdi-delete"></i> Delete All
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -66,16 +80,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($categories as $key => $value) : ?>
-                        <?php if ($value) { ?>
+                    <?php if ($categories != null) { ?>
+                        <?php foreach ($categories as $key => $value) : ?>
                             <tr class="align-middle">
                                 <td><?= $key + 1 ?></td>
                                 <td><?= $value['name_categories'] ?></td>
                                 <td><?= $value['detail_categories'] ?></td>
                                 <td class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <a href="<?= site_url('categories/edit/' . $value['id_categories']) ?>">
-                                            <button class="btn btn-warning m-0">Edit</button>
+                                        <a href="<?= site_url('categories/restore/' . $value['id_categories']) ?>">
+                                            <button class="btn btn-warning m-0">Restore</button>
                                         </a>
                                     </div>
                                     <div class="">
@@ -88,14 +102,14 @@
                                                 <div class="modal-header">
                                                     <h5 class="modal-title">
                                                         Delete Categories</h5>
-                                                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     Are you sure to delete <?= $value["name_categories"] ?>?
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <form action="<?= site_url('/categories/delete/' . $value["id_categories"]) ?>" method="post" class="d-inline">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <form action="<?= site_url('/categories/force/' . $value["id_categories"]) ?>" method="post" class="d-inline">
                                                         <?= csrf_field() ?>
                                                         <button class="btn btn-danger">
                                                             Delete
@@ -107,12 +121,12 @@
                                     </div>
                                 </td>
                             </tr>
-                        <?php } else { ?>
-                            <tr>no data</tr>
-                        <?php } ?>
-                    <?php endforeach ?>
-
-
+                        <?php endforeach ?>
+                    <?php } else { ?>
+                        <tr>
+                            <td align="middle" colspan="4">NO DATA</td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
