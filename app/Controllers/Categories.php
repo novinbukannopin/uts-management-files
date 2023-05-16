@@ -12,13 +12,17 @@ class Categories extends ResourcePresenter
      *
      * @return mixed
      */
+    // public function __construct()
+    // {
+    //     $this->categories = new ModelsCategories();
+    // }
+
+    protected $modelName = '\App\Models\Categories';
+
     public function index()
     {
-        // $categories = new ModelsCategories();
-        // $result = $categories->findAll();
-        return view('categories/index');
-        // dd($result);
-        // return "hai";
+        $data['categories'] = $this->model->findAll();
+        return view('categories/index', $data);
     }
 
     /**
@@ -51,7 +55,9 @@ class Categories extends ResourcePresenter
      */
     public function create()
     {
-        //
+        $data = $this->request->getPost();
+        $this->model->insert($data);
+        return redirect()->to(site_url('categories'))->with('success', 'Your data has been saved succesfullyy');
     }
 
     /**
@@ -63,7 +69,14 @@ class Categories extends ResourcePresenter
      */
     public function edit($id = null)
     {
-        //
+        $categories = $this->model->where('id_categories', $id)->first();
+        if (is_array($categories)) {
+            $data['categories'] = $categories;
+            return view('categories/edit', $data);
+            // dd($data);
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
     }
 
     /**
@@ -76,7 +89,10 @@ class Categories extends ResourcePresenter
      */
     public function update($id = null)
     {
-        //
+        $data = $this->request->getPost();
+        $this->model->update($id, $data);
+        // dd($data);
+        return redirect()->to(site_url('categories'));
     }
 
     /**

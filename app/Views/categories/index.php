@@ -12,7 +12,28 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="card">
+
     <div class="card-body">
+        <?php if (session()->getFlashdata('success')) : ?>
+            <div class="alert alert-primary alert-icon d-flex" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-aside">
+                    <i class="far fa-flag"></i>
+                </div>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Success !!!</h6>
+                    <!-- This alert uses an icon from Font Awesome! -->
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <!-- <div class="alert alert-success alert-dismissable show fade">
+                <div class="alert-body">
+                    <button class="mdi mdi-keyboard-backspace" data-dismiss="alert"></button>
+                    <b>Success !! - </b>
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            </div> -->
         <div class="d-sm-flex justify-content-between align-items-start">
             <div class="">
                 <h4 class="card-title">Table Categories</h4>
@@ -38,39 +59,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td>Jacob</td>
-                        <td>Photoshop</td>
-                        <td>Photoshop</td>
-                        <td>
-                            <button class="btn btn-danger h-100">Edit</button>
-                            <button class="btn btn-warning">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Messsy</td>
-                        <td>Flash</td>
-                        <td class="text-danger"> 21.06% <i class="ti-arrow-down"></i></td>
-                        <td><label class="badge badge-warning">In progress</label></td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Premier</td>
-                        <td class="text-danger"> 35.00% <i class="ti-arrow-down"></i></td>
-                        <td><label class="badge badge-info">Fixed</label></td>
-                    </tr>
-                    <tr>
-                        <td>Peter</td>
-                        <td>After effects</td>
-                        <td class="text-success"> 82.00% <i class="ti-arrow-up"></i></td>
-                        <td><label class="badge badge-success">Completed</label></td>
-                    </tr>
-                    <tr>
-                        <td>Dave</td>
-                        <td>53275535</td>
-                        <td class="text-success"> 98.05% <i class="ti-arrow-up"></i></td>
-                        <td><label class="badge badge-warning">In progress</label></td>
-                    </tr>
+                    <?php foreach ($categories as $key => $value) : ?>
+                        <?php if ($value) { ?>
+                            <tr class="align-middle">
+                                <td><?= $key + 1 ?></td>
+                                <td><?= $value['name_categories'] ?></td>
+                                <td><?= $value['detail_categories'] ?></td>
+                                <td class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <a href="<?= site_url('categories/edit/' . $value['id_categories']) ?>">
+                                            <button class="btn btn-warning m-0">Edit</button>
+                                        </a>
+                                    </div>
+                                    <div class="">
+                                        <button class="btn btn-danger m-0">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php } else { ?>
+                            <tr>no data</tr>
+                        <?php } ?>
+                    <?php endforeach ?>
+
+
                 </tbody>
             </table>
         </div>

@@ -6,28 +6,38 @@
 <div class="card">
 
     <div class="card-body">
-        <h4 class="card-title">Form - Create Categories</h4>
-        <p class="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, autem?
-        </p>
-        <form class="forms-sample">
+        <div class="d-sm-flex justify-content-between align-items-start">
+            <div class="">
+                <h4 class="card-title">Create Table Categories</h4>
+                <p class="card-description">
+                    Tabel Categories <code>untuk Management Files</code>
+                </p>
+            </div>
+            <div>
+                <a href="<?= base_url() ?>categories">
+
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-primary btn-lg text-white mb-0 me-0 align-items-center" type="button">
+                            <i class="mdi mdi-arrow-left-circle">
+                            </i> Back</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <form class="forms-sample" action="<?= site_url('categories') ?>" method="post">
+            <?= csrf_field() ?>
             <div class="form-group">
-                <label for="exampleInputUsername1">Name</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                <label for="name_categories">Name</label>
+                <input type="text" class="form-control" id="name_categories" name="name_categories" placeholder="Name Categories">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Detail</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <label for="detail_categories">Detail</label>
+                <input type="text" class="form-control" id="detail_categories" name="detail_categories" placeholder="Detail Categories">
             </div>
 
-            <div class="form-check form-check-flat form-check-primary">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Remember me
-                    <i class="input-helper"></i></label>
-            </div>
-            <button type="submit" class="btn btn-primary text-white me-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+
+            <button type="submit" class="btn btn-primary text-white me-2">Create</button>
+            <button type="reset" class="btn btn-light">Reset</button>
         </form>
     </div>
 </div>
