@@ -19,6 +19,7 @@ class Categories extends ResourcePresenter
 
     protected $modelName = '\App\Models\Categories';
     protected $helpers = ['custom_helper'];
+    
     public function index()
     {
         $data['categories'] = $this->model->findAll();
