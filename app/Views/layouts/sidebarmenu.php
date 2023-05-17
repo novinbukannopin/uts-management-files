@@ -12,7 +12,7 @@
         <li class="nav-item">
             <a class="nav-link " href="<?php base_url() ?>/categories">
                 <i class="menu-icon mdi mdi-apps"></i>
-                <span class="menu-title">Category</span></a>
+                <span class="menu-title">Categories</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="files">
