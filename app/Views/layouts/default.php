@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url() ?>images/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -36,13 +38,11 @@
                     </button>
                 </div>
                 <div>
-                    <a class="navbar-brand brand-logo" href="index.html">
+                    <a class="navbar-brand brand-logo " href="/">
                         <!-- <img src="images/logo.svg" alt="logo" /> -->
-                        <b>
-                            Info Masseh
-                        </b>
+                        <b>MN Files</b>
                     </a>
-                    <a class="navbar-brand brand-logo-mini" href="index.html">
+                    <a class="navbar-brand brand-logo-mini" href="/">
                         <img src="images/logo-mini.svg" alt="logo" />
                     </a>
                 </div>
@@ -50,12 +50,12 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
+                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?= userLogin()->nama_user ?></span></h1>
                         <h3 class="welcome-sub-text">Your performance summary this week </h3>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown d-none d-lg-block">
+                    <!-- <li class="nav-item dropdown d-none d-lg-block">
                         <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
                             <a class="dropdown-item py-3">
@@ -68,40 +68,18 @@
                                     <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards</p>
                                 </div>
                             </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Angular Bundle</p>
-                                    <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular projects</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">VUE Bundle</p>
-                                    <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">React Bundle</p>
-                                    <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
-                                </div>
-                            </a>
+
                         </div>
-                    </li>
-                    <li class="nav-item d-none d-lg-block">
+                    </li> -->
+                    <!-- <li class="nav-item d-none d-lg-block">
                         <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
                             <span class="input-group-addon input-group-prepend border-right">
                                 <span class="icon-calendar input-group-text calendar-icon"></span>
                             </span>
                             <input type="text" class="form-control">
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <form class="search-form" action="#">
-                            <i class="icon-search"></i>
-                            <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-                        </form>
-                    </li>
+                    </li> -->
+                   
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                             <i class="icon-mail icon-lg"></i>
