@@ -12,11 +12,14 @@
                         <div class="d-sm-flex justify-content-between align-items-start">
                             <div>
                                 <h4 class="card-title card-title-dash">Market Overview</h4>
-                                <p class="card-subtitle card-subtitle-dash">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                                <p class="card-subtitle card-subtitle-dash">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit</p>
                             </div>
                             <div>
                                 <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> This month </button>
+                                    <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0"
+                                        type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"> This month </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                         <h6 class="dropdown-header">Settings</h6>
                                         <a class="dropdown-item" href="#">Action</a>
@@ -55,7 +58,8 @@
                                 <p class="card-subtitle card-subtitle-dash">You have 50+ new requests</p>
                             </div>
                             <div>
-                                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new member</button>
+                                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i
+                                        class="mdi mdi-account-plus"></i>Add new member</button>
                             </div>
                         </div>
                         <div class="table-responsive  mt-1">
@@ -65,7 +69,8 @@
                                         <th>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </th>
                                         <th>Customer</th>
@@ -79,7 +84,8 @@
                                         <td>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -97,12 +103,15 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
                                                     <p class="text-success">79%</p>
                                                     <p>85/162</p>
                                                 </div>
                                                 <div class="progress progress-md">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 85%" aria-valuenow="25" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </td>
@@ -114,7 +123,8 @@
                                         <td>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -132,12 +142,15 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
                                                     <p class="text-success">65%</p>
                                                     <p>85/162</p>
                                                 </div>
                                                 <div class="progress progress-md">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 65%" aria-valuenow="65" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </td>
@@ -149,7 +162,8 @@
                                         <td>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -167,12 +181,15 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
                                                     <p class="text-success">65%</p>
                                                     <p>85/162</p>
                                                 </div>
                                                 <div class="progress progress-md">
-                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                        style="width: 38%" aria-valuenow="38" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </td>
@@ -184,7 +201,8 @@
                                         <td>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -202,12 +220,15 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
                                                     <p class="text-success">65%</p>
                                                     <p>85/162</p>
                                                 </div>
                                                 <div class="progress progress-md">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </td>
@@ -219,7 +240,8 @@
                                         <td>
                                             <div class="form-check form-check-flat mt-0">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                                    <input type="checkbox" class="form-check-input"
+                                                        aria-checked="false"><i class="input-helper"></i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -237,12 +259,15 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
                                                     <p class="text-success">65%</p>
                                                     <p>85/162</p>
                                                 </div>
                                                 <div class="progress progress-md">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 65%" aria-valuenow="65" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </td>
@@ -318,7 +343,8 @@
                         <div class="list align-items-center pt-3">
                             <div class="wrapper w-100">
                                 <p class="mb-0">
-                                    <a href="#" class="fw-bold text-primary">Show all <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                    <a href="#" class="fw-bold text-primary">Show all <i
+                                            class="mdi mdi-arrow-right ms-2"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -379,7 +405,8 @@
                         <div class="list align-items-center pt-3">
                             <div class="wrapper w-100">
                                 <p class="mb-0">
-                                    <a href="#" class="fw-bold text-primary">Show all <i class="mdi mdi-arrow-right ms-2"></i></a>
+                                    <a href="#" class="fw-bold text-primary">Show all <i
+                                            class="mdi mdi-arrow-right ms-2"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -398,8 +425,11 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h4 class="card-title card-title-dash">Todo list</h4>
                                     <div class="add-items d-flex mb-0">
-                                        <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
-                                        <button class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i class="mdi mdi-plus"></i></button>
+                                        <input type="text" class="form-control todo-list-input"
+                                            placeholder="What do you need to do today?">
+                                        <button
+                                            class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i
+                                                class="mdi mdi-plus"></i></button>
                                     </div>
                                 </div>
                                 <div class="list-wrapper">
@@ -407,7 +437,8 @@
                                         <li class="d-block">
                                             <div class="form-check w-100">
                                                 <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy
+                                                    text of the printing <i class="input-helper rounded"></i>
                                                 </label>
                                                 <div class="d-flex mt-2">
                                                     <div class="ps-4 text-small me-3">24 June 2020</div>
@@ -419,7 +450,8 @@
                                         <li class="d-block">
                                             <div class="form-check w-100">
                                                 <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy
+                                                    text of the printing <i class="input-helper rounded"></i>
                                                 </label>
                                                 <div class="d-flex mt-2">
                                                     <div class="ps-4 text-small me-3">23 June 2020</div>
@@ -430,7 +462,8 @@
                                         <li>
                                             <div class="form-check w-100">
                                                 <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy
+                                                    text of the printing <i class="input-helper rounded"></i>
                                                 </label>
                                                 <div class="d-flex mt-2">
                                                     <div class="ps-4 text-small me-3">24 June 2020</div>
@@ -441,7 +474,8 @@
                                         <li class="border-bottom-0">
                                             <div class="form-check w-100">
                                                 <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy text of the printing <i class="input-helper rounded"></i>
+                                                    <input class="checkbox" type="checkbox"> Lorem Ipsum is simply dummy
+                                                    text of the printing <i class="input-helper rounded"></i>
                                                 </label>
                                                 <div class="d-flex mt-2">
                                                     <div class="ps-4 text-small me-3">24 June 2020</div>
@@ -486,7 +520,10 @@
                                     </div>
                                     <div>
                                         <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Month Wise </button>
+                                            <button
+                                                class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0"
+                                                type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"> Month Wise </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                                 <h6 class="dropdown-header">week Wise</h6>
                                                 <a class="dropdown-item" href="#">Year Wise</a>
@@ -515,7 +552,8 @@
                                     </div>
                                 </div>
                                 <div class="mt-3">
-                                    <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                    <div
+                                        class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
                                             <img class="img-sm rounded-10" src="images/faces/face1.jpg" alt="profile">
                                             <div class="wrapper ms-3">
@@ -527,7 +565,8 @@
                                             1h ago
                                         </div>
                                     </div>
-                                    <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                    <div
+                                        class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
                                             <img class="img-sm rounded-10" src="images/faces/face2.jpg" alt="profile">
                                             <div class="wrapper ms-3">
@@ -539,7 +578,8 @@
                                             1h ago
                                         </div>
                                     </div>
-                                    <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                    <div
+                                        class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
                                             <img class="img-sm rounded-10" src="images/faces/face3.jpg" alt="profile">
                                             <div class="wrapper ms-3">
@@ -551,7 +591,8 @@
                                             1h ago
                                         </div>
                                     </div>
-                                    <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
+                                    <div
+                                        class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
                                             <img class="img-sm rounded-10" src="images/faces/face4.jpg" alt="profile">
                                             <div class="wrapper ms-3">
