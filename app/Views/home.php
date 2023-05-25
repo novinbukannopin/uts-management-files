@@ -12,7 +12,7 @@
                         <div class="d-sm-flex justify-content-between align-items-start">
                             <div>
                                 <h4 class="card-title card-title-dash">Market Overview</h4>
-                                <p class="card-subtitle card-subtitle-dash">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                                <p class="card-subtitle card-subtitle-dash">Lorem dolor sit amet consectetur adipisicing elit</p>
                             </div>
                             <div>
                                 <div class="dropdown">
