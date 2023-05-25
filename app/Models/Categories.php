@@ -12,7 +12,7 @@ class Categories extends Model
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
-    protected $protectFields    = true;
+    protected $protectFields    = false;
     protected $allowedFields    = ['name_categories', 'detail_categories'];
 
     // Dates
