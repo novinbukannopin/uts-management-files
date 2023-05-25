@@ -4,22 +4,27 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Categories extends Migration
+class CreateTableFiles extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_categories' => [
+            'id_files' => [
                 'type' => 'BIGINT',
                 'constraint' => 20,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'name_categories' => [
+            'id_categories' => [
+                'type' => 'BIGINT',
+                'constraint' => 20,
+                'unsigned' => true,
+            ],
+            'name_files' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
             ],
-            'detail_categories' => [
+            'detail_files' => [
                 'type' => 'TEXT',
                 'null' => true
             ],
@@ -36,12 +41,13 @@ class Categories extends Migration
                 'null' => true
             ]
         ]);
-        $this->forge->addKey('id_categories', true);
-        $this->forge->createTable('categories');
+        $this->forge->addKey('id_files', true);
+        $this->forge->addForeignKey('id_categories', 'categories', 'id_categories');
+        $this->forge->createTable('files');
     }
 
     public function down()
     {
-        $this->forge->dropTable('categories');
+        $this->forge->dropTable('files');
     }
 }
