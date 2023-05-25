@@ -39,6 +39,7 @@ $routes->post('/categories/force', 'Categories::force');
 $routes->get('/categories/restore/(:any)', 'Categories::restore/$1');
 $routes->post('/categories/force/(:any)', 'Categories::force/$1');
 $routes->presenter('categories');
+$routes->presenter('files');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
