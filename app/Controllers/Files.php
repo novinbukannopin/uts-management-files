@@ -46,7 +46,8 @@ class Files extends ResourceController
      */
     public function new()
     {
-        //
+        $data['files'] = $this->categories->findAll();
+        return view("files/new", $data);
     }
 
     /**
@@ -56,7 +57,9 @@ class Files extends ResourceController
      */
     public function create()
     {
-        //
+        $data = $this->request->getPost();
+        $this->files->insert($data);
+        return redirect()->to(site_url('files'))->with('success', 'Your data has been saved succesfullyy');
     }
 
     /**

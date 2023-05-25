@@ -13,10 +13,10 @@ class ModelFiles extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["name_files", "detail_files", "img_files"];
+    protected $allowedFields    = ["name_files", "detail_files", "img_files", 'id_categories'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
