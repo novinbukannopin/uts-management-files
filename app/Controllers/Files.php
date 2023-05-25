@@ -69,7 +69,16 @@ class Files extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+
+        $files = $this->files->find($id);
+        if (is_array($files)) {
+            $data['files'] = $files;
+            $data['categories'] = $this->categories->findAll();
+            return view('files/edit', $data);
+            // dd($data);
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
     }
 
     /**
@@ -79,7 +88,9 @@ class Files extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $data = $this->request->getPost();
+        $this->files->update($id, $data);
+        return redirect()->to(site_url('files'))->with('success', 'Your data has been update succesfullyy');
     }
 
     /**
