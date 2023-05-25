@@ -15,7 +15,7 @@
                 <span class="menu-title">Categories</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="files">
+            <a class="nav-link" href="<?php base_url() ?>/files">
                 <i class="menu-icon mdi mdi-animation"></i>
                 <span class="menu-title">Files</span>
             </a>
