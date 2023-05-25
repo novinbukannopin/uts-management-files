@@ -36,9 +36,9 @@
             </div> -->
         <div class="d-sm-flex justify-content-between align-items-start">
             <div class="">
-                <h4 class="card-title">Table Categories</h4>
+                <h4 class="card-title">Table Files</h4>
                 <p class="card-description">
-                    Tabel Categories <code>untuk Management Files</code>
+                    Tabel Files <code>untuk Management Files</code>
                 </p>
             </div>
             <div class="d-flex align-items-center gap-2">
@@ -48,12 +48,12 @@
                     </form>
                 </div>
                 <div class="">
-                    <a href="<?= base_url() ?>categories/new">
-                        <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new Category</button>
+                    <a href="<?= base_url() ?>files/new">
+                        <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new Files</button>
                     </a>
                 </div>
                 <div class="">
-                    <a href="<?= base_url() ?>categories/trash">
+                    <a href="<?= base_url() ?>files/trash">
                         <button class="btn btn-danger btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-delete"></i>Trash</button>
                     </a>
                 </div>
@@ -86,7 +86,7 @@
                                         </a>
                                     </div>
                                     <div class="">
-                                        <button class="btn btn-danger m-0" data-bs-toggle="modal" data-bs-target="#modal-Delete-<?= $value["id_categories"] ?>">Delete</button>
+                                        <button class="btn btn-danger m-0" data-bs-toggle="modal" data-bs-target="#modal-Delete-<?= $value["id_files"] ?>">Delete</button>
                                     </div>
 
                                     <div class="modal fade" id="modal-Delete-<?= $value["id_files"] ?>" data-bs-backdrop="false">
@@ -94,7 +94,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title">
-                                                        Delete Categories</h5>
+                                                        Delete Files</h5>
                                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
