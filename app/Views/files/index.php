@@ -15,10 +15,7 @@
 
     <div class="card-body">
         <?php if (session()->getFlashdata('success')) : ?>
-
             <div class="alert alert-primary alert-icon d-flex gap-3" role="alert">
-
-
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                 <div class="alert-icon-aside">
                     <i class="far fa-flag"></i>
@@ -55,6 +52,10 @@
                         <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new Files</button>
                     </a>
                 </div>
+
+
+
+              
 
             </div>
         </div>
