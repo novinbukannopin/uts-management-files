@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?= $this->renderSection('title') ?>
     <!-- plugins:css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="<?= base_url() ?>vendors/feather/feather.css">
     <link rel="stylesheet" href="<?= base_url() ?>vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>vendors/ti-icons/css/themify-icons.css">
@@ -17,6 +19,7 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="<?= base_url() ?>vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="<?= base_url() ?>js/select.dataTables.min.css">
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="<?= base_url() ?>css/vertical-layout-light/style.css">
@@ -50,7 +53,7 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?= userLogin()->nama_user ?></span></h1>
+                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?= userLogin()->nama_user ? userLogin()->nama_user : 'user'  ?></span></h1>
                         <h3 class="welcome-sub-text">Your performance summary this week </h3>
                     </li>
                 </ul>
@@ -79,7 +82,7 @@
                             <input type="text" class="form-control">
                         </div>
                     </li> -->
-                   
+
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                             <i class="icon-mail icon-lg"></i>

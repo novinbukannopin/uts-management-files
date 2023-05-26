@@ -63,7 +63,7 @@ class Filters extends BaseConfig
      */
     public array $filters = [
         'isLoggedIn' => ['before' => [
-            '/', 'categories', 'categories/*'
+            '/', 'categories', 'categories/*', 'files', 'files/*'
         ]]
     ];
 }
