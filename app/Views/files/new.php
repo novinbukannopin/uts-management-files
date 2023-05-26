@@ -44,6 +44,7 @@
                 <input type="text" class="form-control" id="detail_files" name="detail_files" placeholder="Detail Files">
             </div>
 
+
             <button type="submit" class="btn btn-primary text-white me-2">Create</button>
             <button type="reset" class="btn btn-light">Reset</button>
         </form>
