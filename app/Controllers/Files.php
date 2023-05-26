@@ -100,11 +100,7 @@ class Files extends ResourceController
      */
     public function delete($id = null)
     {
- 
         $this->files->delete($id);
         return redirect()->to(site_url('files'))->with('success', 'Data has been success deleted');
-
-        
- 
     }
 }
