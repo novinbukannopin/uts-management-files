@@ -24,11 +24,14 @@
                 </a>
             </div>
         </div>
-        <form class="forms-sample" action="<?= site_url('categories') ?>" method="post">
+
+
+        <form class="forms-sample" action="<?= site_url('categories') ?>" method="post" autocomplete="off">
             <?= csrf_field() ?>
             <div class="form-group">
                 <label for="name_categories">Name</label>
-                <input type="text" class="form-control" id="name_categories" name="name_categories" placeholder="Name Categories">
+                <input type="text" class="form-control" autofocus name="name_categories" placeholder="Name Categories">
+
             </div>
             <div class="form-group">
                 <label for="detail_categories">Detail</label>

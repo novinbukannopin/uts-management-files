@@ -57,6 +57,18 @@ class Categories extends ResourcePresenter
      */
     public function create()
     {
+        // if (!$this->validate([
+        //     'name_categories' => [
+        //         'rules' => 'required|max_length[5]',
+        //         'errors' => [
+        //             'required' => 'gaboleh null',
+        //             'max_length' => 'jgn panjang panjang'
+        //         ]
+        //     ]
+        // ])) {
+        //     session()->setFlashdata('errorform', $this->validator->listErrors());
+        //     return redirect()->back()->withInput();
+        // }
         $data = $this->request->getPost();
         $this->model->insert($data);
         return redirect()->to(site_url('categories'))->with('success', 'Your data has been saved succesfullyy');

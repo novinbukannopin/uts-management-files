@@ -15,7 +15,7 @@
 
     <div class="card-body">
         <?php if (session()->getFlashdata('success')) : ?>
-            <div class="alert alert-primary alert-icon d-flex" role="alert">
+            <div class="alert alert-primary alert-icon d-flex gap-3" role="alert">
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                 <div class="alert-icon-aside">
                     <i class="far fa-flag"></i>

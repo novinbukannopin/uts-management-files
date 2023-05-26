@@ -15,6 +15,7 @@ class Categories extends Model
     protected $protectFields    = false;
     protected $allowedFields    = ['name_categories', 'detail_categories'];
 
+
     // Dates
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
@@ -23,8 +24,6 @@ class Categories extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
