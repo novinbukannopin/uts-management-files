@@ -102,5 +102,6 @@ class Files extends ResourceController
     {
         //
         // add delete
+        // files delete
     }
 }
