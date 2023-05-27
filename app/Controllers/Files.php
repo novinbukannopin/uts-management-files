@@ -101,5 +101,6 @@ class Files extends ResourceController
     public function delete($id = null)
     {
         //
+        // add delete
     }
 }
