@@ -14,7 +14,11 @@
 <div class="card">
 
     <div class="card-body">
-        <?php if (session()->getFlashdata('success')) : ?>
+        <?php
+
+        use PhpParser\Node\Expr\Isset_;
+
+        if (session()->getFlashdata('success')) : ?>
             <div class="alert alert-primary alert-icon d-flex" role="alert">
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                 <div class="alert-icon-aside">
@@ -72,10 +76,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($files as $key => $value) : ?>
+                    <?php
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $no = 1 + (5 * ($page - 1));
+                    foreach ($files as $key => $value) : ?>
                         <?php if ($value) { ?>
                             <tr class="align-middle">
-                                <td><?= $key + 1 ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $value['name_categories'] ?></td>
                                 <td><?= $value['name_files'] ?></td>
                                 <td><?= $value['detail_files'] ?></td>
@@ -122,7 +129,7 @@
 
                 </tbody>
             </table>
-            <div class="card-footer text-right">
+            <!-- <div class="card-footer text-right">
                 <nav class="d-inline-block">
                     <ul class="pagination mb-0">
                         <li class="page-item disabled">
@@ -138,6 +145,9 @@
                         </li>
                     </ul>
                 </nav>
+            </div> -->
+            <div class="mt-4">
+                <?= $pager->links('default', 'pagination') ?>
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ class Files extends ResourceController
 
     public function index()
     {
-        $data['files'] = $this->files->getDataAll();
+        $data = $this->files->getPaginated(5);
         // dd($data['files']);
         return view("files/index", $data);
     }
