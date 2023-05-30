@@ -47,10 +47,15 @@ class ModelFiles extends Model
         return $query->getResultArray();
     }
 
-    function getPaginated($num, $key = null)
+    function getPaginated($num, $keyword = null)
     {
         $builder =  $this->builder();
         $builder->join('categories', 'categories.id_categories = files.id_categories');
+        if ($keyword != '') {
+            $builder->like('name_categories', $keyword);
+            $builder->orLike('name_files', $keyword);
+            $builder->orLike('detail_files', $keyword);
+        }
         return [
             'files' => $this->paginate($num),
             'pager' => $this->pager

@@ -38,4 +38,17 @@ class Categories extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    function getPaginated($num, $keyword = null)
+    {
+        $builder =  $this->builder();
+        if ($keyword != '') {
+            $builder->like('name_categories', $keyword);
+            $builder->orLike('detail_categories', $keyword);
+        }
+        return [
+            'categories' => $this->paginate($num),
+            'pager' => $this->pager
+        ];
+    }
 }

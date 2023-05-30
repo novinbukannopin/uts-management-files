@@ -43,8 +43,12 @@
             </div>
             <div class="d-flex align-items-center gap-2">
                 <div class="">
-                    <form class="search-form" action="#">
-                        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                    <form class="search-form" action="" method="get">
+                        <div class="">
+                            <?php $request = \Config\Services::request() ?>
+                            <input type="text" name="keyword" value="<?= $request->getGet('keyword') ?>" class="form-control" placeholder="Search Here" title="Search here">
+                        </div>
+
                     </form>
                 </div>
                 <div class="">
@@ -71,10 +75,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($categories as $key => $value) : ?>
+                    <?php
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $no = 1 + (5 * ($page - 1));
+                    foreach ($categories as $key => $value) : ?>
                         <?php if ($value) { ?>
                             <tr class="align-middle">
-                                <td><?= $key + 1 ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $value['name_categories'] ?></td>
                                 <td><?= $value['detail_categories'] ?></td>
                                 <td class="d-flex align-items-center gap-3">
@@ -120,22 +127,13 @@
 
                 </tbody>
             </table>
-            <div class="card-footer text-right">
-                <nav class="d-inline-block">
-                    <ul class="pagination mb-0">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="mt-4 d-flex align-items-center justify-content-between">
+                <?= $pager->links('default', 'pagination') ?>
+                <div class="">
+                    <small>
+                        Showing <?= 1 + (5 * ($page - 1)) ?> to <?= $no - 1 ?> of <?= $pager->getTotal() ?> entries
+                    </small>
+                </div>
             </div>
         </div>
     </div>
