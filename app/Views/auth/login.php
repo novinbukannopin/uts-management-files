@@ -37,8 +37,8 @@
 
                             <?php if (session()->getFlashdata('error')) : ?>
                                 <div class="alert alert-danger alert-dismissable show fade">
-                                    <div class="alert-body">
-                                        <button class="close" data-dismiss="alert">x</button>
+                                    <div class="alert-body d-flex gap-2">
+                                        <button class="btn-close btn-sm" data-bs-dismiss="alert"></button>
                                         <b>Error !! - </b>
                                         <?= session()->getFlashdata('error') ?>
                                     </div>
