@@ -22,7 +22,9 @@ class Categories extends ResourcePresenter
 
     public function index()
     {
-        $data['categories'] = $this->model->findAll();
+        $keyword = $this->request->getGet('keyword');
+        $data = $this->model->getPaginated(5, $keyword);
+        $data['keyword'] = $keyword;
         // dd($data);
         return view('categories/index', $data);
     }

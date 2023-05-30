@@ -16,7 +16,6 @@
     <div class="card-body">
         <?php
 
-        use PhpParser\Node\Expr\Isset_;
 
         if (session()->getFlashdata('success')) : ?>
             <div class="alert alert-primary alert-icon d-flex" role="alert">
@@ -47,8 +46,12 @@
             </div>
             <div class="d-flex align-items-center gap-2">
                 <div class="">
-                    <form class="search-form" action="#">
-                        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                    <form class="search-form" action="" method="get">
+                        <div class="">
+                            <?php $request = \Config\Services::request() ?>
+                            <input type="text" name="keyword" value="<?= $request->getGet('keyword') ?>" class="form-control" placeholder="Search Here" title="Search here">
+                        </div>
+                       
                     </form>
                 </div>
                 <div class="">
@@ -146,8 +149,13 @@
                     </ul>
                 </nav>
             </div> -->
-            <div class="mt-4">
+            <div class="mt-4 d-flex align-items-center justify-content-between">
                 <?= $pager->links('default', 'pagination') ?>
+                <div class="">
+                    <small>
+                        Showing <?= 1 + (5 * ($page - 1)) ?> to <?= $no - 1 ?> of <?= $pager->getTotal() ?> entries
+                    </small>
+                </div>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
             </a>
         </li>
 
-        <li class="nav-item nav-category">UI Elements</li>
+        <li class="nav-item nav-category">Features</li>
 
         <li class="nav-item">
             <a class="nav-link " href="<?php base_url() ?>/categories">
