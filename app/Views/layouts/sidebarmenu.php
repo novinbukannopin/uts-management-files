@@ -20,6 +20,13 @@
                 <span class="menu-title">Files</span>
             </a>
         </li>
+        <li class="nav-item nav-category">Administration</li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php base_url() ?>/users">
+                <i class="menu-icon mdi mdi-account"></i>
+                <span class="menu-title">Users</span>
+            </a>
+        </li>
 
     </ul>
 </nav>
