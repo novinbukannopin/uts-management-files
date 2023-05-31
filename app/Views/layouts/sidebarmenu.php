@@ -14,12 +14,21 @@
                 <i class="menu-icon mdi mdi-apps"></i>
                 <span class="menu-title">Categories</span></a>
         </li>
+
+
         <li class="nav-item">
-            <a class="nav-link" href="<?php base_url() ?>/files">
+            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="true" aria-controls="tables">
                 <i class="menu-icon mdi mdi-animation"></i>
                 <span class="menu-title">Files</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables" style="">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="<?php base_url() ?>/files">Files Index</a></li>
+                </ul>
+            </div>
         </li>
+
         <li class="nav-item nav-category">Administration</li>
         <li class="nav-item">
             <a class="nav-link" href="<?php base_url() ?>/users">
@@ -27,6 +36,5 @@
                 <span class="menu-title">Users</span>
             </a>
         </li>
-
     </ul>
 </nav>

@@ -10,3 +10,9 @@ function countData($table)
     $db = \Config\Database::connect();
     return $db->table($table)->countAllResults();
 }
+function categoryFiles($table)
+{
+    $db = \Config\Database::connect();
+    $data =  $db->table($table)->select('name_categories')->where('deleted_at', null)->get()->getResultObject();
+    return $data;
+}
