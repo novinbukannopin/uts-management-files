@@ -15,7 +15,6 @@
             </div>
             <div>
                 <a href="<?= base_url() ?>files">
-
                     <div class="d-flex align-items-center">
                         <button class="btn btn-primary btn-lg text-white mb-0 me-0 align-items-center" type="button">
                             <i class="mdi mdi-arrow-left-circle">
