@@ -67,7 +67,14 @@ class Users extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $users = $this->users->where('id_user', $id)->first();
+        if (is_array($users)) {
+            $data['users'] = $users;
+            return view('users/edit', $data);
+            // dd($data);
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
     }
 
     /**
@@ -77,7 +84,17 @@ class Users extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $users = $this->request->getPost();
+        $oldPassword = $this->users->getWhere(['email_user' => $users['email_user']]);
+        $query = $oldPassword->getRow();
+        $newPassword = password_hash($this->request->getPost('new_password_user'), PASSWORD_BCRYPT);
+        if (password_verify($users['password_user'], $query->password_user)) {
+            $users['password_user'] = $newPassword;
+            $this->users->update($id, $users);
+            return redirect()->to(site_url('users'))->with('success', 'Your data has been update succesfullyy');
+        } else {
+            return redirect()->back()->with('error', 'current password is wrong');
+        }
     }
 
     /**
@@ -88,5 +105,7 @@ class Users extends ResourceController
     public function delete($id = null)
     {
         //
+        $this->users->delete($id);
+        return redirect()->to(site_url('users'))->with('success', 'Data has been success deleted');
     }
 }

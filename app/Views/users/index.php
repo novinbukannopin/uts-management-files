@@ -55,7 +55,7 @@
             </form>
             <div class="">
                 <a href=" <?= base_url() ?>users/new">
-                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new Category</button>
+                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new User</button>
                 </a>
             </div>
             <div class="">
@@ -103,7 +103,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">
-                                                    Delete Categories</h5>
+                                                    Delete User</h5>
                                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
