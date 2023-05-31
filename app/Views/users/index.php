@@ -58,11 +58,7 @@
                     <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new User</button>
                 </a>
             </div>
-            <div class="">
-                <a href="<?= base_url() ?>users/trash">
-                    <button class="btn btn-danger btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-delete"></i>Trash</button>
-                </a>
-            </div>
+
         </div>
     </div>
 
