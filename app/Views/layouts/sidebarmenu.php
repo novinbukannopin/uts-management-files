@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
@@ -17,7 +17,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="true" aria-controls="tables">
+            <a class="nav-link " data-bs-toggle="collapse" href="#tables" aria-expanded="true" aria-controls="tables">
                 <i class="menu-icon mdi mdi-animation"></i>
                 <span class="menu-title">Files</span>
                 <i class="menu-arrow"></i>
