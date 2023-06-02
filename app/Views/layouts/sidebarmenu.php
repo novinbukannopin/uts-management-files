@@ -23,9 +23,15 @@
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables" style="">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?php base_url() ?>/files">Files Index</a></li>
-                </ul>
+                <?php
+                $data = categoryFiles('categories');
+                for ($i = 0; $i < count($data); $i++) { ?>
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="<?php base_url() ?>/files"><?= $data[$i]['name_categories'] ?></a></li>
+                    </ul>
+                <?php
+                }
+                ?>
             </div>
         </li>
 

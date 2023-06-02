@@ -56,12 +56,7 @@ class Files extends ResourceController
      *
      * @return mixed
      */
-    public function create()
-    {
-        $data = $this->request->getPost();
-        $this->files->insert($data);
-        return redirect()->to(site_url('files'))->with('success', 'Your data has been saved succesfullyy');
-    }
+
 
     /**
      * Return the editable properties of a resource object
@@ -70,7 +65,6 @@ class Files extends ResourceController
      */
     public function edit($id = null)
     {
-
         $files = $this->files->find($id);
         if (is_array($files)) {
             $data['files'] = $files;
@@ -89,7 +83,15 @@ class Files extends ResourceController
      */
     public function update($id = null)
     {
-        $data = $this->request->getPost();
+        $oldFiles = $this->files->where('id_files', $id)->first();
+        unlink('uploads/files/' . $oldFiles['file']);
+        $data = $this->request->getPost(['id_categories', 'name_files', 'detail_files', 'created_at', 'updated_at', 'file']);
+        $file = $this->request->getFile('file');
+
+        $fileName = $file->getRandomName();
+        $file->move('uploads/files/', $fileName);
+        $data['file'] = $fileName;
+
         $this->files->update($id, $data);
         return redirect()->to(site_url('files'))->with('success', 'Your data has been update succesfullyy');
     }
@@ -104,7 +106,35 @@ class Files extends ResourceController
         //
         // add delete
         // files delete
+        $oldFiles = $this->files->where('id_files', $id)->first();
+        unlink('uploads/files/' . $oldFiles['file']);
         $this->files->delete($id);
         return redirect()->to(site_url('files'))->with('success', 'Data has been success deleted');
+    }
+
+    public function create()
+    {
+        if (!$this->validate([
+            'file' => [
+                'rules' => 'uploaded[file]|mime_in[file,image/jpg,image/jpeg,image/gif,image/png]|max_size[file,2048]',
+                'errors' => [
+                    'uploaded' => 'Harus Ada File yang diupload',
+                    'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
+                    'max_size' => 'Ukuran File Maksimal 2 MB'
+                ]
+            ]
+        ])) {
+            session()->setFlashdata('error', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
+        $data = $this->request->getPost(['id_categories', 'name_files', 'detail_files', 'created_at', 'updated_at']);
+        $file = $this->request->getFile('file');
+        // dd($data);
+        $fileName = $file->getRandomName();
+        $file->move('uploads/files/', $fileName);
+        $data['file'] = $fileName;
+        // dd($data);
+        $this->files->insert($data);
+        return redirect()->to(site_url('files'))->with('success', 'Your data has been saved succesfullyy');
     }
 }

@@ -13,6 +13,6 @@ function countData($table)
 function categoryFiles($table)
 {
     $db = \Config\Database::connect();
-    $data =  $db->table($table)->select('name_categories')->where('deleted_at', null)->get()->getResultObject();
+    $data =  $db->table($table)->select('name_categories')->where('deleted_at', null)->get()->getResultArray();
     return $data;
 }
