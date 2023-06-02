@@ -418,7 +418,6 @@
     <script src="<?= base_url() ?>js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="<?= base_url() ?>js/jquery.cookie.js" type="text/javascript"></script>
     <script src="<?= base_url() ?>js/dashboard.js"></script>
     <script src="<?= base_url() ?>js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->

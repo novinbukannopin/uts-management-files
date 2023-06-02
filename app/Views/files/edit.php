@@ -23,7 +23,7 @@
                 </a>
             </div>
         </div>
-        <form class="forms-sample" action="<?= site_url('files/update/' . $files['id_files']) ?>" method="post">
+        <form class="forms-sample" action="<?= site_url('files/update/' . $files['id_files']) ?>" method="POST" enctype="multipart/form-data">
             <?= csrf_field() ?>
             <div class="form-group">
                 <label for="">Categories</label>
@@ -40,10 +40,16 @@
                 <input type="text" class="form-control" value="<?= $files["name_files"] ?>" id="name_files" name="name_files" placeholder="Name Files">
             </div>
             <div class="form-group">
+                <label for="file">Files</label>
+                <br />
+                <img src="<?= base_url() ?>uploads/files/<?= $files['file'] ?>" alt="error" width="150px">
+                <!-- <p><?= $files['file'] ?></p> -->
+                <input type="file" class="form-control" id="file" name="file" placeholder="Files">
+            </div>
+            <div class="form-group">
                 <label for="detail_files">Detail</label>
                 <input type="text" class="form-control" value="<?= $files["detail_files"] ?>" id="detail_files" name="detail_files" placeholder="Detail Files">
             </div>
-
 
             <button type="submit" class="btn btn-primary text-white me-2">Update</button>
             <button type="reset" class="btn btn-light">Reset</button>

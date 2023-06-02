@@ -24,7 +24,7 @@
                 </a>
             </div>
         </div>
-        <form class="forms-sample" action="<?= site_url('files') ?>" method="post">
+        <form class="forms-sample" action="<?= site_url('files') ?>" method="POST" enctype="multipart/form-data">
             <?= csrf_field() ?>
             <div class="form-group">
                 <label for="">Categories</label>
@@ -40,10 +40,14 @@
                 <input type="text" class="form-control" id="name_files" name="name_files" placeholder="Name Files">
             </div>
             <div class="form-group">
+                <label for="file">Files</label>
+                <input type="file" class="form-control" id="file" name="file" placeholder="Files">
+            </div>
+
+            <div class="form-group">
                 <label for="detail_files">Detail</label>
                 <input type="text" class="form-control" id="detail_files" name="detail_files" placeholder="Detail Files">
             </div>
-
 
             <button type="submit" class="btn btn-primary text-white me-2">Create</button>
             <button type="reset" class="btn btn-light">Reset</button>
