@@ -61,6 +61,7 @@ class Categories extends ResourcePresenter
     {
         $data = $this->request->getPost();
         $this->model->insert($data);
+        // dd($data);
         return redirect()->to(site_url('categories'))->with('success', 'Your data has been saved succesfullyy');
     }
 
@@ -96,7 +97,7 @@ class Categories extends ResourcePresenter
         $data = $this->request->getPost();
         $this->model->update($id, $data);
         // dd($data);
-        return redirect()->to(site_url('categories'));
+        return redirect()->to(site_url('categories'))->with('success', 'Your data has been update succesfullyy');
     }
 
     /**

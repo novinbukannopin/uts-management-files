@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use PDO;
 
 class ModelFiles extends Model
 {
@@ -47,6 +48,13 @@ class ModelFiles extends Model
         return $query->getResultArray();
     }
 
+    function getCategories()
+    {
+        $builder = $this->db->table('categories');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
     function getPaginated($num, $keyword = null)
     {
         $builder =  $this->builder();
@@ -58,6 +66,7 @@ class ModelFiles extends Model
         }
         return [
             'files' => $this->paginate($num),
+            'categories' => $this->getCategories('categories'),
             'pager' => $this->pager
         ];
     }

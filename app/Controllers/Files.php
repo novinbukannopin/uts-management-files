@@ -26,7 +26,7 @@ class Files extends ResourceController
     {
         $keyword = $this->request->getGet('keyword');
         $data = $this->files->getPaginated(5, $keyword);
-        // dd($data['files']);
+        // dd($data);
         return view("files/index", $data);
     }
 
@@ -114,19 +114,19 @@ class Files extends ResourceController
 
     public function create()
     {
-        if (!$this->validate([
-            'file' => [
-                'rules' => 'uploaded[file]|mime_in[file,image/jpg,image/jpeg,image/gif,image/png]|max_size[file,2048]',
-                'errors' => [
-                    'uploaded' => 'Harus Ada File yang diupload',
-                    'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
-                    'max_size' => 'Ukuran File Maksimal 2 MB'
-                ]
-            ]
-        ])) {
-            session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        }
+        // if (!$this->validate([
+        //     'file' => [
+        //         'rules' => 'uploaded[file]|mime_in[file,image/jpg,image/jpeg,image/gif,image/png]|max_size[file,2048]',
+        //         'errors' => [
+        //             'uploaded' => 'Harus Ada File yang diupload',
+        //             'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
+        //             'max_size' => 'Ukuran File Maksimal 2 MB'
+        //         ]
+        //     ]
+        // ])) {
+        //     session()->setFlashdata('error', $this->validator->listErrors());
+        //     return redirect()->back()->withInput();
+        // }
         $data = $this->request->getPost(['id_categories', 'name_files', 'detail_files', 'created_at', 'updated_at']);
         $file = $this->request->getFile('file');
         // dd($data);
