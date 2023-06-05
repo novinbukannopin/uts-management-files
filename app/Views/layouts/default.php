@@ -11,7 +11,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/img/navicon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css" />
     <!-- Form Validation -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
-
     <!-- Page CSS -->
-
+    <?= $this->renderSection('style') ?>
     <!-- Helpers -->
+    <script src="<?= base_url() ?>assets/vendor/js/helpers.js"></script>
     <script src="<?= base_url() ?>assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -488,12 +488,12 @@
                                     <a href="https://pixinvent.com" target="_blank" class="footer-link fw-medium">Mobile Web Programming - Sistem Informasi UINSA</a>
                                 </div>
                                 <div>
-                                    <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank">License</a>
-                                    <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4">More Themes</a>
+                                    <a href="" class="footer-link me-4" target="_blank">CodeIgniter 4</a>
+                                    <a href="" target="_blank" class="footer-link me-4">AWS RDS</a>
 
-                                    <a href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/" target="_blank" class="footer-link me-4">Documentation</a>
+                                    <a href="" target="_blank" class="footer-link me-4">Bootstraps 5</a>
 
-                                    <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
+                                    <!-- <a href="" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a> -->
                                 </div>
                             </div>
                         </div>

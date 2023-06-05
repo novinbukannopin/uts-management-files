@@ -26,15 +26,22 @@
                     </div>
                     <div class="dt-action-buttons text-end pt-3 pt-md-0">
                         <div class="dt-buttons btn-group flex-wrap">
-                            <div class="btn-group">
-                                <button class="btn btn-label-primary btn-secondary buttons-collection dropdown-toggle me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog" aria-expanded="false">
-                                    <span>
-                                        <i class="mdi mdi-export-variant me-sm-1"></i>
-                                        <span class="d-none d-sm-inline-block">Export</span>
-                                    </span>
-                                    <span class="dt-down-arrow"></span>
+                            <div class="btn-group" id="hover-dropdown-demo">
+                                <button type="button" class="btn btn-success dropdown-toggle waves-effect waves-light me-2" data-bs-toggle="dropdown" data-trigger="hover" aria-expanded="false">
+                                    <i class="mdi mdi-export-variant me-sm-1"></i>
+                                    <span class="d-none d-sm-inline-block">Export</span>
                                 </button>
+                                <ul class="dropdown-menu" style="">
+                                    <li><a class="dropdown-item waves-effect" href="<?= site_url('files/show') ?>"><i class="mdi mdi-file-pdf-box"></i> PDF</a></li>
+                                    <li><a class="dropdown-item waves-effect" href="javascript:void(0);"><i class="mdi mdi-file-excel"></i> Excel</a></li>
+                                    <!-- <li><a class="dropdown-item waves-effect" href="javascript:void(0);">Something else here</a></li> -->
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item waves-effect" href="javascript:void(0);"><i class="mdi mdi-cloud-print"></i> Print</a></li>
+                                </ul>
                             </div>
+
 
                             <button class="btn btn-secondary create-new btn-primary me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button">
                                 <span>
@@ -89,7 +96,7 @@
                         $no = 1 + (5 * ($page - 1));
                         foreach ($files as $key => $value) : ?>
                             <?php if ($value) { ?>
-                                <tr class="align-middle">
+                                <tr class="align-middle h-100 ">
                                     <td class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 22.3333px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></td>
                                     <td><?= $no++ ?></td>
                                     <td><?= $value['name_categories'] ?></td>
@@ -98,7 +105,7 @@
                                     <td><?= $value['detail_files'] ?></td>
                                     <td class="">
                                         <div class="">
-                                            <button class="btn btn-secondary btn-warning m-0" tabindex="0" t type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasUpdate-<?= $value['id_files'] ?>">Edit</button>
+                                            <button class="btn btn-secondary btn-warning m-0 mb-2" tabindex="0" t type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasUpdate-<?= $value['id_files'] ?>">Edit</button>
                                         </div>
                                         <!--  -->
                                         <!-- modal edit -->
@@ -238,7 +245,7 @@
                                     <option value="<?= $value['id_categories'] ?>"><?= $value['name_categories'] ?></option>
                                 <?php } ?>
                             </select>
-                            <label for="name_categories">Example select</label>
+                            <label for="name_categories">Select Categories</label>
                         </div>
                     </div>
                     <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -248,7 +255,7 @@
                     <div class="input-group input-group-merge">
                         <span id="basicPost2" class="input-group-text"><i class="mdi mdi-file-multiple"></i></span>
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="name_files" name="name_files" class="form-control dt-name_files" placeholder="Detail Category" aria-label="Web Developer" aria-describedby="basicPost2">
+                            <input type="text" id="name_files" name="name_files" class="form-control dt-name_files" placeholder="Name Files" aria-label="Web Developer" aria-describedby="basicPost2">
                             <label for="name_files">Name Files</label>
                         </div>
                     </div>
@@ -267,7 +274,7 @@
                     <div class="input-group input-group-merge">
                         <span id="basicPost2" class="input-group-text"><i class="mdi mdi-file-multiple"></i></span>
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="detail_files" name="detail_files" class="form-control dt-detail_files" placeholder="Detail Category" aria-label="Web Developer" aria-describedby="basicPost2">
+                            <input type="text" id="detail_files" name="detail_files" class="form-control dt-detail_files" placeholder="Detail Files" aria-label="Web Developer" aria-describedby="basicPost2">
                             <label for="detail_files">Detail Files</label>
                         </div>
                     </div>
@@ -296,6 +303,8 @@
 <script src="<?= base_url() ?>assets/js/forms-file-upload.js"></script>
 <script src="<?= base_url() ?>assets/vendor/libs/moment/moment.js"></script>
 <script src="<?= base_url() ?>assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="<?= base_url() ?>assets/vendor/js/dropdown-hover.js"></script>
+
 <!-- Form Validation -->
 <script src="<?= base_url() ?>assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
 <script src="<?= base_url() ?>assets/vendor/libs/dropzone/dropzone.js"></script>

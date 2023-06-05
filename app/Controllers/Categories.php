@@ -2,8 +2,13 @@
 
 namespace App\Controllers;
 
+require_once APPPATH . 'ThirdParty\Spout\Autoloader\autoload.php';
+
 use App\Models\Categories as ModelsCategories;
 use CodeIgniter\RESTful\ResourcePresenter;
+
+
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 
 class Categories extends ResourcePresenter
 {
@@ -19,6 +24,36 @@ class Categories extends ResourcePresenter
 
     protected $modelName = '\App\Models\Categories';
     protected $helpers = ['custom_helper'];
+
+    public function uploadData()
+    {
+
+        if ($file = $this->request->getFile('uploadFile')) {
+            $fileName = $file->getRandomName();
+            $file->move('uploads/files/xlsx/', $fileName);
+
+
+            $reader = ReaderEntityFactory::createXLSXReader();
+
+            $reader->open('uploads/files/xlsx/' . $fileName);
+            foreach ($reader->getSheetIterator() as $sheet) {
+                $numRow = 1;
+                foreach ($sheet->getRowIterator() as $row) {
+                    if ($numRow > 1) {
+                        $categories = array(
+                            'name_categories'  => $row->getCellAtIndex(0)->getValue(),
+                            'detail_categories'  => $row->getCellAtIndex(1)->getValue(),
+                        );
+                        $this->model->insert($categories);
+                    }
+                    $numRow++;
+                }
+                $reader->close();
+                unlink('uploads/files/xlsx/' . $fileName);
+                return redirect()->to(site_url('categories'))->with('success', 'Import data saved succesfullyy');
+            }
+        }
+    }
 
     public function index()
     {
@@ -83,6 +118,7 @@ class Categories extends ResourcePresenter
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
     }
+
 
     /**
      * Process the updating, full or partial, of a specific resource object.

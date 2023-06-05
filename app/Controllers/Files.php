@@ -37,7 +37,14 @@ class Files extends ResourceController
      */
     public function show($id = null)
     {
-        //
+        $data['files'] = $this->files->getDataAll();
+        // dd($data);
+        return view('files/preview', $data);
+    }
+    public function print()
+    {
+        // $data['files'] = $this->files->getDataAll();
+        return view('files/print');
     }
 
     /**

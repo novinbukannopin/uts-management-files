@@ -11,9 +11,9 @@
       "url": "files"
     },
     {
-      "name": "Dashboard CRM",
-      "icon": "mdi-home-outline",
-      "url": "dashboards-crm.html"
+      "name": "Users",
+      "icon": "mdi-account-star",
+      "url": "users"
     },
     {
       "name": "Layout Collapsed menu",

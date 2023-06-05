@@ -39,6 +39,18 @@ class Categories extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function import_data($categories)
+    {
+        $jumlah = count($categories);
+        dd($categories);
+        // die;
+        // if ($jumlah > 0) {
+        // $this->insertBatch($categories);
+        // }
+        // var_dump($categories);
+        // die;
+    }
+
     function getPaginated($num, $keyword = null)
     {
         $builder =  $this->builder();

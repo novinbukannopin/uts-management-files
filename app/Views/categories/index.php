@@ -32,6 +32,42 @@
                                     <span class="dt-down-arrow"></span>
                                 </button>
                             </div>
+                            <button type="button" class="btn btn-label-success waves-effect me-2 waves-light" data-bs-toggle="modal" data-bs-target="#modalTop">
+                                <span>
+                                    <i class="mdi mdi-database-import-outline me-sm-1"></i>
+                                    <span class="d-none d-sm-inline-block">Import</span>
+                                </span>
+                            </button>
+
+                            <div class="modal modal-top fade" id="modalTop" tabindex="-1" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <?= form_open_multipart('categories/uploadData') ?>
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="modalTopTitle">Import Data Excel</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col mb-4 mt-2">
+                                                    <div class="form-floating form-floating-outline">
+                                                        <input type="file" id="uploadFile" name="uploadFile" class="form-control" placeholder="Chosee File">
+                                                        <label for="uploadFile">File</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-label-secondary waves-effect" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light">Upload</button>
+                                        </div>
+                                        <?= form_close() ?>
+                                    </div>
+                                </div>
+                            </div>
 
                             <button class="btn btn-secondary create-new btn-primary me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button">
                                 <span>
@@ -70,6 +106,7 @@
 
                         </form>
                     </div>
+
                 </div>
                 <table class="datatables-basic table table-hover dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 977px;">
                     <thead>

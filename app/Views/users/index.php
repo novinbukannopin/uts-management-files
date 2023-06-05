@@ -105,7 +105,7 @@
                                         <!-- modal edit -->
                                         <div class="offcanvas offcanvas-end" id="offCanvasUpdate-<?= $value['id_user'] ?>">
                                             <div class="offcanvas-header border-bottom">
-                                                <h5 class="offcanvas-title" id="exampleModalLabel">Update Categories</h5>
+                                                <h5 class="offcanvas-title" id="exampleModalLabel">Update Users</h5>
                                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             </div>
                                             <div class="offcanvas-body flex-grow-1">
@@ -115,7 +115,7 @@
                                                         <div class="input-group input-group-merge">
                                                             <span id="name_categories" class="input-group-text"><i class="mdi mdi-shape-outline"></i></span>
                                                             <div class="form-floating form-floating-outline">
-                                                                <input type="text" id="name_categories" value="<?= $value['nama_user'] ?>" class="form-control dt-name-user" name="name_categories" placeholder="Categories" aria-label="Categories" aria-describedby="basicFullname2">
+                                                                <input type="text" id="name_categories" value="<?= $value['nama_user'] ?>" class="form-control dt-name-user" name="nama_user" placeholder="Nama User" aria-label="Categories" aria-describedby="basicFullname2">
                                                                 <label for="name_categories">Nama User</label>
                                                             </div>
                                                         </div>

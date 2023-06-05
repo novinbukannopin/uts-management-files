@@ -54,12 +54,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
             notEmpty: {
               message: "Password is required",
             },
+            stringLength: {
+              min: 8,
+              message: "The name must be more than 8 characters long",
+            },
           },
         },
         nama_user: {
           validators: {
             notEmpty: {
-              message: "Name Files is required",
+              message: "Name User is required",
+            },
+            regexp: {
+              regexp: /^[a-zA-Z]+$/,
+              message: "The name can only consist of alphabetical",
             },
           },
         },
