@@ -40,7 +40,7 @@
          <!-- Dashboards -->
 
          <li class="menu-item">
-             <a href="javascript:void(0);" class="menu-link menu-toggle">
+             <a href="" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons mdi mdi-folder-play-outline"></i>
                  <div data-i18n="Content">Content</div>
                  <div class="badge bg-primary rounded-pill ms-auto">3</div>
