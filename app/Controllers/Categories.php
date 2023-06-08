@@ -2,13 +2,14 @@
 
 namespace App\Controllers;
 
+use Dompdf\Dompdf;
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
+
 require_once APPPATH . 'ThirdParty\Spout\Autoloader\autoload.php';
 
-use App\Models\Categories as ModelsCategories;
+
+use Axpp\Models\Categories as ModelsCategories;
 use CodeIgniter\RESTful\ResourcePresenter;
-
-
-use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 
 class Categories extends ResourcePresenter
 {
@@ -55,12 +56,28 @@ class Categories extends ResourcePresenter
         }
     }
 
-    public function index()
+
+
+    public function exportpdf()
     {
         $keyword = $this->request->getGet('keyword');
         $data = $this->model->getPaginated(5, $keyword);
         $data['keyword'] = $keyword;
         // dd($data);
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('categories/index', $data));
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+        $dompdf->stream();
+    }
+
+    public function index()
+    {
+        $keyword = $this->request->getGet('keyword');
+        $data = $this->model->getPaginated(5, $keyword);
+        // $data['categories'] = $this->model->findAll()->where('deleted_at', null, false);
+        $data['keyword'] = $keyword;
+        dd($data);
         return view('categories/index', $data);
     }
 

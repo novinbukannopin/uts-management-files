@@ -24,13 +24,13 @@
                     <div class="dt-action-buttons text-end pt-3 pt-md-0">
                         <div class="dt-buttons btn-group flex-wrap">
                             <div class="btn-group">
-                                <button class="btn btn-secondary buttons-collection dropdown-toggle btn-label-primary me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog" aria-expanded="false">
+                                <a class="btn btn-secondary buttons-collection dropdown-toggle btn-label-primary me-2" href="<?= base_url('categories/exportpdf') ?>">
                                     <span>
                                         <i class="mdi mdi-export-variant me-sm-1"></i>
                                         <span class="d-none d-sm-inline-block">Export</span>
                                     </span>
                                     <span class="dt-down-arrow"></span>
-                                </button>
+                                </a>
                             </div>
                             <button type="button" class="btn btn-label-success waves-effect me-2 waves-light" data-bs-toggle="modal" data-bs-target="#modalTop">
                                 <span>

@@ -50,7 +50,7 @@ class ModelFiles extends Model
 
     function getCategories()
     {
-        $builder = $this->db->table('categories');
+        $builder = $this->db->table('categories')->where('deleted_at', null, false);
         $query = $builder->get();
         return $query->getResultArray();
     }

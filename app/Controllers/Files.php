@@ -16,6 +16,8 @@ class Files extends ResourceController
     // protected $modelName = '\App\Models\ModelFiles';
     protected $helpers = ['custom_helper'];
 
+    protected $categories;
+    protected $files;
     public function __construct()
     {
         $this->categories = new Categories();
@@ -114,7 +116,11 @@ class Files extends ResourceController
         // add delete
         // files delete
         $oldFiles = $this->files->where('id_files', $id)->first();
-        unlink('uploads/files/' . $oldFiles['file']);
+        if (
+            $this->files->where('file', $id)->first()
+        ) {
+            unlink('uploads/files/' . $oldFiles['file']);
+        }
         $this->files->delete($id);
         return redirect()->to(site_url('files'))->with('success', 'Data has been success deleted');
     }

@@ -40,9 +40,10 @@ $routes->post('/categories/uploadData', 'Categories::uploadData');
 $routes->get('/categories/restore/(:any)', 'Categories::restore/$1');
 $routes->post('/categories/force/(:any)', 'Categories::force/$1');
 $routes->presenter('categories');
-$routes->get('/files/print', 'Files::print');
+// $routes->get('/files/print', 'Files::print');
 $routes->presenter('files');
 $routes->presenter('users');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
