@@ -77,7 +77,7 @@ class Categories extends ResourcePresenter
         $data = $this->model->getPaginated(5, $keyword);
         // $data['categories'] = $this->model->findAll()->where('deleted_at', null, false);
         $data['keyword'] = $keyword;
-        dd($data);
+        // dd($data);
         return view('categories/index', $data);
     }
 
