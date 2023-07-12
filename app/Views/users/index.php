@@ -70,6 +70,7 @@
                         </form>
                     </div>
                 </div>
+
                 <table class="datatables-basic table table-hover dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 977px;">
                     <thead>
                         <tr>
@@ -83,9 +84,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr class="odd">
-                            <td colspan="7" class="dataTables_empty" valign="top">Loading...</td>
-                        </tr> -->
                         <?php
                         $page = isset($_GET['page']) ? $_GET['page'] : 1;
                         $no = 1 + (5 * ($page - 1));
@@ -207,6 +205,7 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
+
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
@@ -230,6 +229,7 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body flex-grow-1">
+
             <form class="add-new-record pt-0 row g-3 fv-plugins-bootstrap5 fv-plugins-framework" id="form-add-new-record" method="post" action="<?= site_url('users') ?>">
                 <?= csrf_field() ?>
                 <div class="col-sm-12 fv-plugins-icon-container">
@@ -287,7 +287,6 @@
                         }
                     }
                 </script>
-                <!-- <input type="hidden"> -->
             </form>
         </div>
     </div>
